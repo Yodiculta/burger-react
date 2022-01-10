@@ -1,6 +1,6 @@
 import { Button, Counter, CurrencyIcon } from '@ya.praktikum/react-developer-burger-ui-components';
 import React, { useState } from 'react'
-import bgStyle from './bgStyle.module.css'
+import bgStyle from './BurgerStyle.module.css'
 import {SubTub} from './SubTub'
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
