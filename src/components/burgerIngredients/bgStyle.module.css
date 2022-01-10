@@ -138,8 +138,9 @@
   font-family: 'JetBrains', Arial, sans-serif;
   height: 539px;
   width: 720px;
-  background-color: rgb(0, 0, 0);
   pointer-events: none;
+  border-radius: 40px;
+  background-color:  #1C1C21;
   align-items: center;
 }
 .details h1{

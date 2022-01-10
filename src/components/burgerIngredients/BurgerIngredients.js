@@ -4,36 +4,21 @@ import bgStyle from './bgStyle.module.css'
 import {SubTub} from './SubTub'
 import ReactDOM from 'react-dom';
 import PropTypes from 'prop-types';
-/*
+
 const productPropTypes = PropTypes.shape({
   _id: PropTypes.string.isRequired,
-  __v: PropTypes.number.isRequired,
-  type: PropTypes.string.isRequired,
-  name: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
-  proteins: PropTypes.number.isRequired,
-  fat: PropTypes.number.isRequired,
-  carbohydrates: PropTypes.number.isRequired,
-  calories: PropTypes.number.isRequired,
-  image: PropTypes.string.isRequired,
-  image_large: PropTypes.string.isRequired,
-  image_mobile: PropTypes.string.isRequired
-});
-Product.propTypes={
-  data:productPropTypes,
+  __v: PropTypes.number,
   type: PropTypes.string,
-  isLocked: PropTypes.bool
-}
-BurgerIngredients.propTypes={
-  data:PropTypes.arrayOf(productPropTypes.isRequired).isRequired
-}
-Modal.propTypes={
-  data:productPropTypes
-}
-Child.propTypes={
-  data:productPropTypes
-}
-*/
+  name: PropTypes.string,
+  price: PropTypes.number,
+  proteins: PropTypes.number,
+  fat: PropTypes.number,
+  carbohydrates: PropTypes.number,
+  calories: PropTypes.number,
+  image: PropTypes.string,
+  image_large: PropTypes.string,
+  image_mobile: PropTypes.string
+});
 const Product = ({data }) => {
     const [show, setShow]=useState();
 
@@ -59,7 +44,9 @@ const Product = ({data }) => {
     </>
   );
 };
-
+Product.propTypes={
+  data:productPropTypes
+}
 const modalRoot = document.getElementById('root');
 
 class Modal extends React.Component {
@@ -90,6 +77,10 @@ class Modal extends React.Component {
       this.el
     );
   }
+}
+
+Modal.propTypes={
+  data:productPropTypes
 }
 function Child({data}) {
   const image = (
@@ -131,7 +122,9 @@ function Child({data}) {
   );
 }
 
-
+Child.propTypes={
+  data:productPropTypes
+}
 
 class BurgerIngredients extends React.Component{
 
@@ -186,4 +179,7 @@ class BurgerIngredients extends React.Component{
     }
 }
 
+BurgerIngredients.propTypes={
+  data:PropTypes.arrayOf(productPropTypes.isRequired).isRequired
+}
 export default BurgerIngredients;
